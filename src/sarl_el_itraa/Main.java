@@ -37,7 +37,7 @@ public class Main {
         
         
         URL url = Main.class.getProtectionDomain().getCodeSource().getLocation(); //Gets the path
-        Link = tools.getUrl(url,"SARL_EL_ITRAA");
+        Link = tools.getUrl(url,"Sarl_El_ITRAA");
         
         d.setter(Link);
         
@@ -60,124 +60,10 @@ public class Main {
         d.close();
        
         
-         //CHECK FOR LICENCE 
-            
-     
-                 /*
-            
-            Operation j = new Operation();
-            tools t= new tools();
-          
-            
-            //today date  and serial
-            String date = t.jour();
-            String serial = j.executeVolCommand();
-            int nombrejour=0;
-            
-            
-            
-            
-            
-            //Verifie l'existence d'une ligne base de donnée et le fichier de configuration
-            boolean k;
-      try {
-          k = j.supercheck();
-      
-            if(k==true){ // si les lignes existe on procéde au déchiffrement
-                
-                String req = "SELECT * FROM brak";
-                String codeData = null;
-                String datef=null;
-                String codeConfig = null;
-                
-                d.connect();
-                codeData=d.RecuperationString(req, "info");
-                datef=d.RecuperationString(req,"rem");
-                codeConfig =c.GetProp("ddtf");
-                
-                d.close();
-                
-                
-                
-                if(!codeData.equals(null) && !codeData.equals("null") ){
-                    String[] part = j.decode(codeData).split("/");
-                    
-                    
-                    
-                    //&& part[0]==codeConfig && serial==part[1]
-                    // if(part[2].equals("LF") && part[0].equals(codeConfig) && serial.equals(part[1])){
-                    if(part[2].equals("LF") && serial.equals(part[1])){
-                        
-                        String today = t.jour();
-                        today = today.replaceAll("-", "");
-                        int dateAu = Integer.parseInt(today);
-                        int dtf = Integer.parseInt(part[0]);
-                        
-                        
-                        if(dateAu<dtf){
-                            String[] lgd = null;
-                            Login.main(lgd);
-                            
-                        }else{
-                            
-                            String req2 = "insert into  brak (info,rem) values('null','null')";
-                            String req3 = "Delete from brak";
-                            
-                            d.connect();
-                            d.query(req3);
-                            d.query(req2);
-                            d.close();
-                            
-                            DemandeLicence dm = new DemandeLicence();
-                            
-                            String codage = j.code(null,null,"LF");
-                            dm.Setterlien(Link);
-                            dm.setCode(codage);
-                            String[] rgtd=null;
-                            
-                            dm.main(rgtd);
-                            
-                        }
-                        
-                    }
-                    
-                    
-                }else{ // Si l'existence est FALSE  on enregistre les infos
-                    
-                    
-                    DemandeLicence dm = new DemandeLicence();
-                    dm.Setterlien(Link);
-                    String codage = j.code(null,null,"LF");
-                    dm.setCode(codage);
-                    String[] rgtd=null;
-                    
-                    dm.main(rgtd);
-                    
-                }
-                
-            }else{
-                DemandeLicence dm = new DemandeLicence();
-                String codage = j.code(null,null,"LF");
-                dm.Setterlien(Link);
-                dm.setCode(codage);
-                String[] rgtd=null;
-                
-                dm.main(rgtd);
-            }
-            
-          
-    
-            } catch (SQLException ex) {
-          Logger.getLogger(PointVente.class.getName()).log(Level.SEVERE, null, ex);
-      }catch (ClassNotFoundException ex) {
-          Logger.getLogger(PointVente.class.getName()).log(Level.SEVERE, null, ex);
-      }
-            
-            
-        */
         
-        //Login login = new Login();
-        PRINCIPAL login = new PRINCIPAL();
+        
+        Login login = new Login();
+        //PRINCIPAL login = new PRINCIPAL();
         String[] kl = null;
         login.main(kl);
         
